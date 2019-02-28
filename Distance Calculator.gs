@@ -1,9 +1,9 @@
-/*
+/** 
  * Conner Warboys 
  * February 26th, 2019
- * Grade 11 Learn To Learn 
-*/
-
+ * Grade 11 Learn To Learn
+ */ 
+ 
 /**
  * @OnlyCurrentDoc Limits the script to only accessing the current sheet.
  */
@@ -50,6 +50,9 @@ function milesTOKilometers(Miles) {
   }
   return Miles / 1 * 1.60934;
 }
+/** 
+ *Tried to change background colour here but it didn't work
+ */  
 
 /**
  * A custom function that gets the driving distance between two addresses.
@@ -69,10 +72,15 @@ function drivingDistance(origin, destination) {
 function prepareSheet_() {
   var sheet = SpreadsheetApp.getActiveSheet().setName('Settings');
   var headers = [
-    'Start Address',
-    'End Address',
+    'Starting Address',
+    'End Adress',
     'Driving Distance (meters)',
-    'Driving Distance (miles)'];
+    'Driving Distance (miles)'
+    'Driving Distance (kilometers)'] ;
+    /*
+     * for some reason I tried to add in the automatic header of driving distance in Km's but it says the end bracket isn't there when it is 
+     */
+    
   var initialData = [
     '350 5th Ave, New York, NY 10118',
     '405 Lexington Ave, New York, NY 10174'];
@@ -177,9 +185,9 @@ function generateStepByStep_() {
  *     start of the range).
  */
 function setAlternatingRowBackgroundColors_(range, oddColor, evenColor) {
-  var backgrounds = [];
+  var backgrounds = [red];
   for (var row = 1; row <= range.getNumRows(); row++) {
-    var rowBackgrounds = [];
+    var rowBackgrounds = [blue];
     for (var column = 1; column <= range.getNumColumns(); column++) {
       if (row % 2 == 0) {
         rowBackgrounds.push(evenColor);
